@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(new_human_detection)
+project(agn_human_detection)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -7,7 +7,7 @@ project(new_human_detection)
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   laser_geometry
-  robina_human_tracker_lrf
+#  robina_human_tracker_lrf
   roslib
   rospy
   sensor_msgs
@@ -85,7 +85,16 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-CATKIN_DEPENDS message_runtime geometry_msgs laser_geometry robina_human_tracker_lrf roslib rospy sensor_msgs std_msgs tf 
+  CATKIN_DEPENDS 
+  message_runtime 
+  geometry_msgs 
+  laser_geometry 
+#  robina_human_tracker_lrf 
+  roslib 
+  rospy 
+  sensor_msgs 
+  std_msgs 
+  tf 
 )
 
 ###########
@@ -100,19 +109,19 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(new_human_detection
-#   src/${PROJECT_NAME}/new_human_detection.cpp
+# add_library(agn_human_detection
+#   src/${PROJECT_NAME}/agn_human_detection.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(new_human_detection_node src/new_human_detection_node.cpp)
+# add_executable(agn_human_detection_node src/agn_human_detection_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(new_human_detection_node new_human_detection_generate_messages_cpp)
+# add_dependencies(agn_human_detection_node agn_human_detection_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(new_human_detection_node
+# target_link_libraries(agn_human_detection_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -126,13 +135,13 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
  install(PROGRAMS
-   script/new_human_detection
+   script/agn_human_detection
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS new_human_detection new_human_detection_node
+# install(TARGETS agn_human_detection agn_human_detection_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -157,7 +166,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_new_human_detection.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_agn_human_detection.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
